@@ -1,13 +1,14 @@
-import {Link} from 'react-router-dom';
-import React, {useEffect} from 'react';
+import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
-import {hooks} from '../hooks';
-import {custom} from '../custom';
-import {svg} from '../assets/svg';
-import {actions} from '../store/actions';
-import {components} from '../components';
+import { hooks } from '../hooks';
+import { custom } from '../custom';
+import { svg } from '../assets/svg';
+import { actions } from '../store/actions';
+import { components } from '../components';
 
 import background from '../assets/bg/03.png';
+import logo from '../assets/Logo.png';
 
 export const SignUp: React.FC = () => {
   const dispatch = hooks.useDispatch();
@@ -45,7 +46,7 @@ export const SignUp: React.FC = () => {
             paddingBottom: 20,
             paddingLeft: 20,
             paddingRight: 20,
-            paddingTop: '16%',
+            paddingTop: 20,
             borderRadius: 20,
           }}
         >
@@ -56,7 +57,7 @@ export const SignUp: React.FC = () => {
               marginBottom: 16,
             }}
           >
-            <svg.LogoBigSvg />
+            <img src={logo} alt="Logo" style={{ height: 150 }} />
           </div>
           <h1
             style={{
@@ -69,41 +70,41 @@ export const SignUp: React.FC = () => {
           </h1>
           <span
             className='t18'
-            style={{textAlign: 'center', display: 'block', marginBottom: 30}}
+            style={{ textAlign: 'center', display: 'block', marginBottom: 30 }}
           >
             Use social networks or your email
           </span>
           <custom.InputField
-            containerStyle={{marginBottom: 16}}
+            containerStyle={{ marginBottom: 16 }}
             placeholder='Enter your name'
           />
           <custom.InputField
-            containerStyle={{marginBottom: 16}}
+            containerStyle={{ marginBottom: 16 }}
             placeholder='Enter your email'
           />
           <custom.InputField
-            containerStyle={{marginBottom: 16}}
+            containerStyle={{ marginBottom: 16 }}
             placeholder='Enter your password'
             icon={<svg.CheckSvg />}
           />
           <custom.InputField
-            containerStyle={{marginBottom: 16}}
+            containerStyle={{ marginBottom: 16 }}
             placeholder='Confirm your password'
             icon={<svg.EyeOffSvg />}
           />
           <components.Button
             text='Sign Up'
             to='/sign-up-account-created'
-            containerStyle={{marginBottom: 24}}
+            containerStyle={{ marginBottom: 24 }}
           />
           <div
             className='t18'
-            style={{textAlign: 'center'}}
+            style={{ textAlign: 'center' }}
           >
             Already have an account?{' '}
             <Link
               to='/'
-              style={{color: 'var(--main-color)'}}
+              style={{ color: 'var(--main-color)' }}
             >
               Sign in.
             </Link>{' '}
